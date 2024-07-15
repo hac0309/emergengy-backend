@@ -104,8 +104,8 @@ public class SecurityConfig {
 //                .requestMatchers("/search/*").hasAnyRole("USER", "ADMIN")
 //                .requestMatchers("/freecomment/*").hasAnyRole("USER", "ADMIN")
 //                .requestMatchers("/helpcomment/*").hasAnyRole("USER", "ADMIN")
-//                .requestMatchers("/member/*").hasRole("ADMIN") // 회원 관리는 관리자이면 접근 가능
-//                .anyRequest().authenticated()
+                .requestMatchers("/member/list").hasRole("ADMIN") // 회원 관리는 관리자이면 접근 가능
+                .anyRequest().authenticated()
 
                 .and()
                 // oauth2
