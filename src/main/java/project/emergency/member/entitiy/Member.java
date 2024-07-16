@@ -29,7 +29,7 @@ public class Member extends BaseEntity {
     @Column(length = 20, nullable = false)
     String memName;
 
-    @Column
+    @Column(length = 20, nullable = false)
     String provider;
 
 //    @Column(length = 20, nullable = false)
