@@ -81,7 +81,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         // 1.인증 필터 등록: /member 또는 /board 요청이 들어오면 사용자 인증 실행
-        String[] arr = {"/member/*", "/shop/*", "/order/*", "/modify/*", "/logout", "/toilet/*", "/review/*", "/mypage/*", "/delete-member/*"};
+        String[] arr = {"/member/**", "/shop/*", "/order/*", "/logout", "/member/byId", "/toilet/registerInfo", "/review/register", "/mypage/**"};
       
         http.addFilterBefore(new ApiCheckFilter(arr, jwtUtil(), customUserDetailsService()), UsernamePasswordAuthenticationFilter.class);
 
@@ -104,8 +104,8 @@ public class SecurityConfig {
 //                .requestMatchers("/search/*").hasAnyRole("USER", "ADMIN")
 //                .requestMatchers("/freecomment/*").hasAnyRole("USER", "ADMIN")
 //                .requestMatchers("/helpcomment/*").hasAnyRole("USER", "ADMIN")
-                .requestMatchers("/member/list").hasRole("ADMIN") // 회원 관리는 관리자이면 접근 가능
-                .anyRequest().authenticated()
+//                .requestMatchers("/member/*").hasRole("ADMIN") // 회원 관리는 관리자이면 접근 가능
+//                .anyRequest().authenticated()
 
                 .and()
 //                // oauth2

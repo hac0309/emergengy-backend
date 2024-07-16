@@ -50,7 +50,7 @@ public class MemberServiceImp implements MemberService {
         Member entity = dtoToEntity(dto);
 
         // 기본 사이트 설정
-//        entity.setProvider("나지금급해");
+        entity.setProvider("나지금급해");
 
         // 기본 등급 설정
         entity.setMemGrade("FAMILY");
